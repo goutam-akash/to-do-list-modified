@@ -103,7 +103,20 @@ const Home = () => {
   };
 
   return (
-    <div style={{ padding: "20px", backgroundColor: "#1e1e1e", minHeight: "100vh", color: "#fff" }}>
+  
+    <div style={{ padding: "20px", backgroundColor: "#1e1e1e", minHeight: "90vh", color: "#fff"}}>
+      <p
+  style={{
+    padding: "10px",
+    fontSize: "32px",
+    fontWeight: "bold",
+    color: "#C0C0C0", // Coral color (darker orange)
+    fontFamily: "'Poppins', sans-serif", // Modern font family
+  }}
+>
+  Todo List App
+</p>
+
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <input
@@ -147,7 +160,10 @@ const Home = () => {
             borderRadius: "4px",
             color: "#fff",
             cursor: "pointer",
+            transition: 'background-color 0.2s ease',
           }}
+          onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#218838")} // Darker green for hover
+          onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#28a745")} // Original green on mouse out
         >
           + Add Task
         </button>

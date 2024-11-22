@@ -15,7 +15,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
       </head>
       <body>
         <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-          <h1>Todo List</h1>
+          
           {children}
         </div>
       </body>
