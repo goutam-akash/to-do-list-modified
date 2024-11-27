@@ -12,18 +12,19 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [newTodo, setNewTodo] = useState("");
 
-  useEffect(() => {
-    const fetchTodos = async () => {
-      try {
-        const allTodos = await fetchAllTodos();
-        setTodos(allTodos);
-      } catch (err) {
-        setError("Failed to fetch todos.");
-      } finally {
-        setLoading(false);
-      }
-    };
 
+  async function fetchTodos () {
+    try {
+      const allTodos = await fetchAllTodos();
+      setTodos(allTodos);
+    } catch (err) {
+      setError("Failed to fetch todos.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     fetchTodos();
   }, []);
 
